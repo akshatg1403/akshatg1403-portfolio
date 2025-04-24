@@ -1,0 +1,20 @@
+
+.button::after{
+    content: "";
+    border-radius: 0.125rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left:0;
+    right:0;
+    width: 0;
+    height: 100%;
+    background: #000;
+    transition: 1s;
+    z-index: -1;
+    opacity: 1;
+}
+
+.button:hover::after{
+    width: 100%;
+}

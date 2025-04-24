@@ -1,0 +1,96 @@
+Spring Boot Email Sender Application
+Overview
+This is a Spring Boot application designed to send emails efficiently using a simple and scalable architecture. The application leverages JavaMailSender for email delivery and is highly configurable for various use cases, including transactional and notification emails.
+
+Features
+Email Sending: Supports plain text and HTML-based email content.
+Attachment Support: Attach files to emails.
+Template Integration: Use dynamic templates for personalized email content.
+Configuration: Easily customizable SMTP properties.
+Error Handling: Graceful handling of delivery failures and retries.
+REST API Integration: Send emails using a RESTful API endpoint.
+Technologies Used
+Spring Boot: Application framework for rapid development.
+Spring Web: Provides REST API functionality.
+Spring Mail (JavaMailSender): For email delivery using SMTP.
+Thymeleaf: Template engine for dynamic email templates.
+Maven: Dependency management.
+Prerequisites
+Java 17+
+Maven
+SMTP credentials (e.g., Gmail, SendGrid, etc.)
+Setup and Configuration
+Clone the repository:
+
+bash
+Copy code
+git clone https://github.com/your-repo/springboot-email-sender.git
+cd springboot-email-sender
+Configure SMTP in application.properties:
+
+properties
+Copy code
+spring.mail.host=smtp.gmail.com  
+spring.mail.port=587  
+spring.mail.username=your-email@gmail.com  
+spring.mail.password=your-password  
+spring.mail.properties.mail.smtp.auth=true  
+spring.mail.properties.mail.smtp.starttls.enable=true  
+Build and run the application:
+
+bash
+Copy code
+mvn clean install  
+mvn spring-boot:run  
+Usage
+Send an email via REST API:
+
+Endpoint: POST /api/v1/email/send
+Payload Example:
+json
+Copy code
+{
+  "to": "recipient@example.com",
+  "subject": "Test Email",
+  "body": "<h1>Hello, World!</h1>",
+  "isHtml": true
+}
+Response:
+
+json
+Copy code
+{
+  "status": "Email sent successfully"
+}
+Sample Code
+java
+Copy code
+@Autowired
+private JavaMailSender mailSender;
+
+public void sendEmail(String to, String subject, String body, boolean isHtml) {
+    MimeMessage message = mailSender.createMimeMessage();
+    try {
+        MimeMessageHelper helper = new MimeMessageHelper(message, true);
+        helper.setTo(to);
+        helper.setSubject(subject);
+        helper.setText(body, isHtml);
+        mailSender.send(message);
+    } catch (MessagingException e) {
+        throw new RuntimeException("Failed to send email", e);
+    }
+}
+License
+This project is licensed under the MIT License.
+
+Contributing
+Contributions are welcome! Feel free to open issues or submit pull requests.
+
+Contact
+For queries, email at adityakumar8018@gmail.com.
+
+
+
+
+
+
