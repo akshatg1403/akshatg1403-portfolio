@@ -1,0 +1,184 @@
+.terminal-section { background: var(--bg-primary); }
+
+.terminal-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px var(--border-color),
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    0 0 80px rgba(108, 99, 255, 0.08);
+}
+
+/* Chrome bar */
+.terminal__chrome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #1a1a24;
+  border-bottom: 1px solid #2a2a3a;
+}
+
+.terminal__dots { display: flex; gap: 8px; }
+
+.terminal__dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+}
+
+.terminal__dot--red { background: #ff5f57; }
+.terminal__dot--yellow { background: #ffbd2e; }
+.terminal__dot--green { background: #28ca41; }
+
+.terminal__title {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  color: #6a6a80;
+}
+
+/* Body */
+.terminal__body {
+  background: var(--terminal-bg);
+  min-height: 380px;
+  max-height: 460px;
+  overflow-y: auto;
+  padding: 20px 24px 8px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  cursor: text;
+
+  /* Custom scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: #2a2a40 transparent;
+}
+
+.terminal__body::-webkit-scrollbar { width: 4px; }
+.terminal__body::-webkit-scrollbar-thumb {
+  background: #2a2a40;
+  border-radius: 2px;
+}
+
+/* Lines */
+.term-line {
+  color: var(--terminal-green);
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-height: 1.4em;
+}
+
+.term-line--empty { min-height: 0.8em; }
+
+.term-line--input {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  color: var(--text-primary);
+}
+
+.term-line--error { color: #ff6b6b; }
+
+.term-link {
+  color: var(--terminal-cyan);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.term-link:hover { color: var(--accent-primary); }
+
+/* Prompt */
+.term-prompt {
+  color: var(--terminal-cyan);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+/* Input text ghost + real input trick */
+.term-line--active {
+  position: relative;
+}
+
+.term-ghost-input {
+  color: var(--text-primary);
+  white-space: pre;
+  pointer-events: none;
+}
+
+.term-real-input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  border: none;
+  background: transparent;
+  outline: none;
+  pointer-events: none;
+}
+
+/* Blinking caret */
+.term-caret {
+  display: inline-block;
+  width: 9px;
+  height: 1.1em;
+  background: var(--terminal-green);
+  vertical-align: middle;
+  margin-left: 1px;
+  animation: termBlink 1s step-end infinite;
+}
+
+@keyframes termBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Quick commands */
+.terminal__quick-cmds {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #13131c;
+  border-top: 1px solid #1e1e2c;
+}
+
+.terminal__quick-label {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  color: #5a5a72;
+  white-space: nowrap;
+}
+
+.terminal__quick-btn {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  color: var(--terminal-cyan);
+  background: rgba(0, 212, 255, 0.06);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 4px;
+  padding: 3px 10px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.terminal__quick-btn:hover:not(:disabled) {
+  background: rgba(0, 212, 255, 0.15);
+  color: white;
+}
+
+.terminal__quick-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .terminal__body {
+    font-size: 0.8rem;
+    padding: 14px 14px 8px;
+    min-height: 300px;
+  }
+}

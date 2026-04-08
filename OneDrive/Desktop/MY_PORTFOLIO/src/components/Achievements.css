@@ -1,0 +1,70 @@
+.achievements { background: var(--bg-primary); }
+
+.achievements__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.achievement-card {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.achievement-card__icon-wrap {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: rgba(108, 99, 255, 0.08);
+  border: 1px solid var(--border-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.achievement-card__icon { font-size: 1.5rem; }
+
+.achievement-card__content { flex: 1; }
+
+.achievement-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.achievement-card__title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.achievement-card__year {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  color: var(--accent-secondary);
+  white-space: nowrap;
+  padding: 2px 8px;
+  background: rgba(0, 212, 255, 0.08);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  flex-shrink: 0;
+}
+
+.achievement-card__description {
+  font-size: 0.87rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .achievements__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .achievements__grid { grid-template-columns: 1fr; }
+}

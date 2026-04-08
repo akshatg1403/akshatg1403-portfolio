@@ -1,0 +1,118 @@
+.aviation {
+  background: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Runway deco */
+.aviation__runway {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-bottom: 20px;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.aviation__runway-line {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+}
+
+/* Layout */
+.aviation__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Text side */
+.aviation__subtitle {
+  font-size: 1.1rem;
+  color: var(--accent-secondary);
+  font-style: italic;
+  margin-bottom: 20px;
+  font-family: 'Fira Code', monospace;
+}
+
+.aviation__description {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1rem;
+  margin-bottom: 32px;
+}
+
+.aviation__plane-deco {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 2rem;
+}
+
+.aviation__flight-path {
+  display: block;
+  height: 2px;
+  width: 120px;
+  background: linear-gradient(90deg, var(--accent-primary), transparent);
+  border-radius: 2px;
+  position: relative;
+}
+
+.aviation__flight-path::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: 0;
+  width: 6px;
+  height: 6px;
+  background: var(--accent-secondary);
+  border-radius: 50%;
+}
+
+/* Cards */
+.aviation__cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.aviation__card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.aviation__card-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.aviation__card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.aviation__card-description {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .aviation__inner { grid-template-columns: 1fr; gap: 40px; }
+  .aviation__cards { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .aviation__cards { grid-template-columns: 1fr; }
+}
