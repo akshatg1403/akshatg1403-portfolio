@@ -171,6 +171,13 @@ export const experienceConfig = [
 
 export const achievementsConfig = [
   {
+    id: 5,
+    title: "JEE Advanced Qualified",
+    description: "Secured AIR 24,942 in JEE Main — top 2% among ~1.2 million candidates — and qualified JEE Advanced.",
+    icon: "⭐",
+    year: "2022",
+  },
+  {
     id: 1,
     title: "CreaTech 2024 Participant",
     description: "Competed in RGIPT's flagship technical hackathon, presenting an innovative AI-powered solution.",
@@ -196,13 +203,6 @@ export const achievementsConfig = [
     title: "MMVY Scholarship Recipient",
     description: "Awarded the Mukhyamantri Medhavi Vidyarthi Yojana scholarship for academic excellence.",
     icon: "🎓",
-    year: "2022",
-  },
-  {
-    id: 5,
-    title: "JEE Mains Qualifier",
-    description: "Qualified JEE Mains with a strong score, securing admission to RGIPT, an Institute of National Importance.",
-    icon: "⭐",
     year: "2022",
   },
   {
@@ -351,11 +351,11 @@ export const terminalConfig = {
       output: [
         "Achievements:",
         "",
+        "⭐ JEE Advanced Qualified — AIR 24,942 in JEE Main (top 2% of ~1.2M)",
         "🏆 CreaTech 2024 Hackathon Participant",
         "🎤 ACM Orientation Speaker",
         "📜 SQL Certification",
         "🎓 MMVY Scholarship Recipient",
-        "⭐ JEE Mains Qualifier",
         "💻 GFG Problem Setter",
         "",
       ],
