@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { MotionConfig } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -9,6 +10,7 @@ import Aviation from './components/Aviation';
 import Terminal from './components/Terminal';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import CustomCursor from './components/CustomCursor';
 import './index.css';
 
 // Intersection Observer for scroll animations
@@ -45,7 +47,9 @@ export default function App() {
   }, []);
 
   return (
+    <MotionConfig reducedMotion="user">
     <div className="app">
+      <CustomCursor />
       <Navbar />
       <main>
         <Hero />
@@ -59,5 +63,6 @@ export default function App() {
       </main>
       <Footer />
     </div>
+    </MotionConfig>
   );
 }

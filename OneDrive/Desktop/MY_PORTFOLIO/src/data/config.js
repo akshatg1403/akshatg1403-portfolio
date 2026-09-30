@@ -22,12 +22,13 @@ export const socialLinks = {
 };
 
 export const aboutConfig = {
+  // Keep this short — 2 lines reads better than 4 paragraphs
   bio: [
-    "I'm a passionate software developer and AI enthusiast pursuing B.Tech in Information Technology at Rajiv Gandhi Institute of Petroleum Technology (RGIPT), Jais.",
-    "My journey in tech is driven by a deep curiosity for how things work — from writing my first lines of code to building intelligent systems that solve real-world problems.",
-    "I specialize in full-stack development, machine learning, and generative AI. I love exploring new technologies, contributing to open-source, and turning ideas into impactful products.",
-    "Beyond coding, I enjoy exploring new frameworks, contributing to open-source, and building side projects that solve real problems. Family keeps me grounded while ambition keeps me pushing forward.",
+    "Software developer from RGIPT who turns ideas into full-stack products and AI-powered tools.",
+    "Curious about how things work, obsessed with shipping things that do.",
   ],
+  // Shown in the About stats (only a few projects are listed in projectsConfig)
+  projectsCount: 20,
   skills: [
     "Python", "JavaScript", "React", "Node.js",
     "Machine Learning", "Deep Learning", "TensorFlow",
@@ -46,6 +47,7 @@ export const projectsConfig = [
     demo: "https://frontend-mu-rosy-75.vercel.app",
     image: "/projects/chefkart.png",
     featured: true,
+    category: "Full-Stack",
   },
   {
     id: 2,
@@ -56,6 +58,7 @@ export const projectsConfig = [
     demo: "https://interviewplat.vercel.app/",
     image: "/projects/interviewcollab.png",
     featured: true,
+    category: "Full-Stack",
   },
   {
     id: 3,
@@ -66,6 +69,7 @@ export const projectsConfig = [
     demo: "https://travel-website-proj-6q9nvtym9-akshatg1403s-projects.vercel.app/",
     image: "/projects/travel.png",
     featured: true,
+    category: "Frontend",
   },
   {
     id: 4,
@@ -76,6 +80,7 @@ export const projectsConfig = [
     demo: null,
     image: null,
     featured: false,
+    category: "AI / ML",
   },
   {
     id: 5,
@@ -86,6 +91,7 @@ export const projectsConfig = [
     demo: null,
     image: null,
     featured: false,
+    category: "AI / ML",
   },
   {
     id: 6,
@@ -96,69 +102,70 @@ export const projectsConfig = [
     demo: null,
     image: null,
     featured: false,
+    category: "AI / ML",
   },
 ];
 
+// Education journey — listed in chronological order (first → latest)
 export const educationConfig = [
   {
     id: 1,
-    institution: "Rajiv Gandhi Institute of Petroleum Technology (RGIPT)",
-    degree: "B.Tech in Information Technology",
-    duration: "2022 – 2026",
-    location: "Jais, Uttar Pradesh",
-    description: "Specializing in software engineering, AI/ML, and data science. Active member of ACM student chapter.",
-    logo: "🎓",
+    level: "Class X",
+    institution: "Delhi Public School",
+    short: "DPS",
+    board: "CBSE",
+    duration: "2018 – 2019",
   },
   {
     id: 2,
-    institution: "Senior Secondary School",
-    degree: "Class XII (PCM) – CBSE",
-    duration: "2020 – 2022",
-    location: "India",
-    description: "Completed with distinction. Strong foundation in Mathematics, Physics and Computer Science.",
-    logo: "🏫",
+    level: "Class XII",
+    institution: "K.M. Public School",
+    short: "KM",
+    board: "CBSE",
+    duration: "2020 – 2021",
   },
   {
     id: 3,
-    institution: "High School",
-    degree: "Class X – CBSE",
-    duration: "2018 – 2020",
-    location: "India",
-    description: "Top performer in Mathematics and Science.",
-    logo: "📚",
+    level: "B.Tech · Information Technology",
+    institution: "Rajiv Gandhi Institute of Petroleum Technology",
+    short: "RGIPT",
+    badge: "Institute of National Importance",
+    duration: "2022 – 2026",
+    logo: "/logos/rgipt.png",
+    image: "/education/rgipt-campus.jpg",
+    featured: true,
   },
 ];
 
+// Newest first. `points` are shown as bullets — keep each one short.
 export const experienceConfig = [
   {
     id: 1,
-    role: "Software Development Intern",
-    company: "Conquerors Software Technologies",
-    duration: "Summer 2024",
-    location: "Remote",
-    description: "Developed full-stack web applications using React and Node.js. Contributed to production codebase, implemented REST APIs, and improved application performance.",
+    role: "Product Support Engineer Intern",
+    company: "Exotel",
+    duration: "May 2026 – Sep 2026",
+    points: [
+      "Built product monitoring dashboards with Python, SQL & REST APIs",
+      "Debugged backend & API integration failures through log analysis and RCA",
+      "Worked with engineering & product teams on API validation and incident tracking",
+    ],
+    tech: ["Python", "SQL", "REST APIs", "Linux", "Jira", "Salesforce"],
     type: "internship",
-    logo: "💼",
+    logo: "/logos/exotel.svg",
+    link: "https://exotel.com",
   },
   {
     id: 2,
-    role: "AI/ML Research Intern",
-    company: "Research Project",
-    duration: "2024",
-    location: "RGIPT",
-    description: "Conducted research on generative AI models, implemented GAN architectures, and published lab reports on CIFAR-10 and MNIST image generation.",
-    type: "research",
-    logo: "🤖",
-  },
-  {
-    id: 3,
-    role: "Technical Lead",
-    company: "ACM RGIPT Student Chapter",
-    duration: "2023 – Present",
-    location: "RGIPT, Jais",
-    description: "Leading technical initiatives, organizing coding competitions, and mentoring junior students in software development and competitive programming.",
-    type: "leadership",
-    logo: "🏆",
+    role: "SDE Intern",
+    company: "Ocliq.ai",
+    duration: "Dec 2025 – Apr 2026",
+    points: [
+      "Built the company website end to end — design, development & deployment",
+      "Showcased Ocliq.ai's AI-powered video surveillance platform",
+    ],
+    type: "internship",
+    logo: "/logos/ocliq.png",
+    link: "https://ocliq.in",
   },
 ];
 
@@ -331,14 +338,11 @@ export const terminalConfig = {
       output: [
         "Experience:",
         "",
-        "💼 Software Dev Intern @ Conquerors Software Technologies",
-        "   Summer 2024 | React, Node.js, REST APIs",
+        "💼 Product Support Engineer Intern @ Exotel",
+        "   May 2026 – Aug 2026 | Python, SQL, REST APIs, Linux, Jira",
         "",
-        "🤖 AI/ML Research Intern @ RGIPT",
-        "   2024 | GANs, Deep Learning, PyTorch",
-        "",
-        "🏆 Technical Lead @ ACM RGIPT",
-        "   2023–Present | Leadership, Mentoring",
+        "💻 SDE Intern @ Ocliq.ai",
+        "   Dec 2025 – Mar 2026 | Built ocliq.in end to end",
         "",
       ],
     },

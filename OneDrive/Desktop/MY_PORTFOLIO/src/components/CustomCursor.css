@@ -1,0 +1,104 @@
+/* Hide the native cursor only when the custom one is active (fine pointers) */
+.has-custom-cursor,
+.has-custom-cursor * {
+  cursor: none !important;
+}
+
+.has-custom-cursor input,
+.has-custom-cursor textarea,
+.has-custom-cursor [contenteditable="true"] {
+  cursor: text !important;
+}
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10000;
+  border-radius: 50%;
+  transition: opacity 0.2s ease;
+}
+
+/* Centre dot — tracks the pointer exactly */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  background: var(--accent-secondary);
+  box-shadow: 0 0 10px var(--accent-secondary), 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+.cursor-dot--hover,
+.cursor-dot--label {
+  opacity: 0 !important;
+}
+
+/* Trailing ring — springs behind the dot */
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px;
+  border: 1.5px solid rgba(108, 99, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    width 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    margin 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.3s ease,
+    border-color 0.3s ease,
+    opacity 0.2s ease;
+}
+
+.cursor-ring--hover {
+  width: 56px;
+  height: 56px;
+  margin: -28px 0 0 -28px;
+  border-color: var(--accent-secondary);
+  background: rgba(0, 212, 255, 0.08);
+  backdrop-filter: blur(1px);
+}
+
+.cursor-ring--label {
+  width: 84px;
+  height: 84px;
+  margin: -42px 0 0 -42px;
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  box-shadow: 0 8px 30px rgba(108, 99, 255, 0.45);
+}
+
+.cursor-ring--pressed {
+  width: 26px;
+  height: 26px;
+  margin: -13px 0 0 -13px;
+}
+
+.cursor-ring--hover.cursor-ring--pressed {
+  width: 44px;
+  height: 44px;
+  margin: -22px 0 0 -22px;
+}
+
+.cursor-ring--label.cursor-ring--pressed {
+  width: 72px;
+  height: 72px;
+  margin: -36px 0 0 -36px;
+}
+
+.cursor-ring__label {
+  color: white;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  animation: cursorLabelIn 0.25s ease;
+}
+
+@keyframes cursorLabelIn {
+  from { opacity: 0; transform: scale(0.6); }
+  to   { opacity: 1; transform: scale(1); }
+}
