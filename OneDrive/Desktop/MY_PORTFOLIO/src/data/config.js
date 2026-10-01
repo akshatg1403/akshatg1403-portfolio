@@ -172,8 +172,8 @@ export const experienceConfig = [
 export const achievementsConfig = [
   {
     id: 5,
-    title: "JEE Advanced Qualified",
-    description: "Secured AIR 24,942 in JEE Advanced 2022 — top 2% among ~1.2 million JEE aspirants.",
+    title: "JEE Advanced 2022",
+    description: "Secured AIR 24,942 in JEE Advanced, from a pool of ~1 million JEE Main aspirants.",
     icon: "⭐",
     year: "2022",
   },
@@ -351,7 +351,7 @@ export const terminalConfig = {
       output: [
         "Achievements:",
         "",
-        "⭐ JEE Advanced 2022 — AIR 24,942 (top 2% of ~1.2M aspirants)",
+        "⭐ JEE Advanced 2022 — AIR 24,942, from a pool of ~1M JEE Main aspirants",
         "🏆 CreaTech 2024 Hackathon Participant",
         "🎤 ACM Orientation Speaker",
         "📜 SQL Certification",
